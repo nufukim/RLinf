@@ -874,7 +874,7 @@ class MegatronActor(MegatronModelManager, Worker):
         ):
             batch = self._dp_load_balance(batch)
 
-        if not batch.data:
+        if not batch:
             return None, None
 
         # Advantage normalization
